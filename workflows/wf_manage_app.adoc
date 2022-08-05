@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_manage_app.html 
+keywords:  
+summary:  
+---
+= Gérer une application
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez créer une application gérée basée sur une application déjà connue d'Astra. Lorsqu'une application est gérée, vous pouvez la protéger par des sauvegardes et des snapshots réguliers.
+
+
+
+=== Avant de commencer
+
+Vous devez avoir l'ID de l'application découverte que vous souhaitez gérer. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_unman_apps.html["Répertorier les applications non gérées"] pour localiser l'application.
+
+
+
+=== 1. Gérer l'application
+
+Effectuez l'appel de l'API REST suivant.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| POST | /Account/{AccountID}/k8s/v1/managedApps 
+|===
+
+
+===== Paramètres d'entrée supplémentaires
+
+Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
+
+[cols="25,10,10,55"]
+|===
+| Paramètre | Type | Obligatoire | Description 
+
+
+| JSON | Corps | Oui. | Fournit les paramètres nécessaires à l'identification de l'application à gérer. Voir l'exemple ci-dessous. 
+|===
+
+
+===== Exemple d'entrée JSON
+
+[source, json]
+----
+{
+  "type": "application/astra-managedApp",
+  "version": "1.1",
+  "id": "7da20fff-c69d-4270-bb0d-a4f91c5a1333"
+}
+----
+
+
+===== Exemple de curl : gérer une application
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps' --header 'Content-Type: application/astra-managedApp+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'  --d @JSONinput
+----

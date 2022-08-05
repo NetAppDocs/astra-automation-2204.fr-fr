@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_backups.html 
+keywords:  
+summary:  
+---
+= Répertoriez les sauvegardes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez lister les sauvegardes créées pour une application gérée spécifique.
+
+
+
+=== Avant de commencer
+
+Vous devez disposer de l'ID de l'application gérée pour laquelle vous souhaitez répertorier les sauvegardes. Si nécessaire, vous pouvez utiliser le workflow link:wf_list_man_apps.html["Répertorier les applications gérées"] pour localiser l'application.
+
+
+
+=== 1. Dressez la liste des sauvegardes
+
+Effectuez l'appel de l'API REST suivant.
+
+[cols="25,75"]
+|===
+| Méthode HTTP | Chemin 
+
+
+| OBTENEZ | /Accounts/{account_ID}/k8s/v1/managedApps/{managedApp_ID}/appBackups 
+|===
+
+
+===== Paramètres d'entrée supplémentaires
+
+Outre les paramètres communs à tous les appels API REST, les paramètres suivants sont également utilisés dans les exemples de boucles pour cette étape.
+
+[cols="25,10,10,55"]
+|===
+| Paramètre | Type | Obligatoire | Description 
+
+
+| id d'application géré | Chemin | Oui. | Identifie l'application gérée propriétaire des sauvegardes répertoriées. 
+|===
+
+
+===== Exemple Curl : renvoie toutes les sauvegardes de l'application
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Exemple de sortie JSON
+
+[source, json]
+----
+{
+  "items": [
+    {
+      "type": "application/astra-appBackup",
+      "version": "1.0",
+      "id": "ed39fdb0-12db-497b-9e46-20036c1fb0d2",
+      "name": "mariadb-mariadb-backup-20210617175900",
+      "state": "completed",
+      "stateUnready": [],
+      "bytesDone": 0,
+      "percentDone": 100,
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2021-06-17T17:59:09Z",
+        "modificationTimestamp": "2021-06-17T17:59:09Z",
+        "createdBy": "fb093413-b6fc-4a64-a48a-afc32ada8537"
+      }
+    }
+  ],
+  "metadata": {}
+}
+----
