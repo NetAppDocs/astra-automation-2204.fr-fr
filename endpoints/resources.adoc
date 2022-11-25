@@ -160,12 +160,6 @@ Les points de terminaison de ressource de topologie fournissent un accès aux ap
 | Classe de stockage | 21.08 | Les ressources de classe de stockage représentent différents types ou classes de stockage détectés et disponibles pour un cluster géré spécifique. 
 
 
-| Dispositif de stockage | 21.12 | Les ressources associées au dispositif de stockage permettent d'accéder aux disques associés à un nœud de stockage spécifique pour les systèmes back-end de stockage de type Astra Data Store (ADS). Un système back-end ADS est déployé en tant que clusters Kubernetes. 
-
-
-| Nœud de stockage | 21.12 | Les ressources du nœud de stockage représentent les nœuds qui font partie d'un cluster ADS. 
-
-
 | Volumétrie | 21.04 | Les ressources de volume représentent les volumes de stockage Kubernetes associés aux applications gérées. 
 |===
 
