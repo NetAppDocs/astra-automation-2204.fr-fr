@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="c6c51849eeb1ac322baa3a99b7cd7e43" category="summary">Voici le résumé d'Astra Automation.</block>
   <block id="798161428a705ba47c31cc8ace9316e3" category="doc">Documentation Astra Control Automation 22.04</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="summary"></block>
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="doc">Ressources supplémentaires</block>
@@ -915,4 +914,5 @@
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="775e2faa120631457b3eb5f26a2f323a" category="sidebar">Astra Control est un logiciel NetApp qui permet de gérer le cycle de vie des données pour vos applications Kubernetes. Deux modèles de déploiement sont disponibles selon votre environnement. Astra Control Center et Astra Control Service partagent la même API REST pour une version donnée. Vous pouvez utiliser l'API et d'autres technologies d'automatisation associées pour gérer vos déploiements Astra Control.</block>
 </blocks>
